@@ -8,7 +8,7 @@
 
   # update the apt catalog
   - name: "Ensure apt is updated"
-    ansible.builtin.raw: "apt update -y"
+    raw: "apt update -y"
     become: yes
 
   # install Python with ansible
