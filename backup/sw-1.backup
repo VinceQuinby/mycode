@@ -1,0 +1,24 @@
+! Command: show running-config
+! device: arista (vEOS, EOS-4.22.0F)
+!
+! boot system flash:/vEOS-lab.swi
+!
+transceiver qsfp default-mode 4x10G
+!
+hostname arista
+!
+ntp server 0.us.pool.ntp.org
+!
+spanning-tree mode mstp
+!
+no aaa root
+!
+username admin role network-admin secret sha512 $6$v0BAOeuBvNC2J7Hf$18hprCEIz1meApV/9K3wm0gAJNRAMtnD4oe7cU66VqBlQ3ED.8Jueoq2wUfJ13MxdLDj9HYU0h9xX.7AM32t..
+!
+interface Management1
+   ip address dhcp
+   dhcp client accept default-route
+!
+no ip routing
+!
+end
